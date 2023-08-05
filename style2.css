@@ -8,7 +8,7 @@
   
   nav {
     height: 80px;
-    background: #FAEBD7;
+    background: #ccbdaa;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +34,7 @@
   }
   
   .hero {
-    background: #FAEBD7;
+    background: #ccbdaa;
   }
   
   .hero-container {
@@ -116,11 +116,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    height: 35%;
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #FAEBD7;
+    background-color: #ccbdaa;
   }
   
   .container:hover .overlay {
