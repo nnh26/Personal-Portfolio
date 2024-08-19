@@ -68,10 +68,11 @@
     padding: 1rem 3rem;
     font-size: 1rem;
     border: none;
-    color: #fdcc04;
+    color: #fff;
     background: #000;
     cursor: pointer;
     border-radius: 50px;
+    
   }
   
   button:hover {
@@ -123,9 +124,9 @@
     background-color: #ccbdaa;
   }
   
-  .container:hover .overlay {
-    opacity: 1;
-  }
+  /*.container:hover .overlay {
+     opacity: 1; 
+  }*/
   
   .text {
     color: black;
