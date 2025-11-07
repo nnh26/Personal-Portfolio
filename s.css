@@ -1,0 +1,66 @@
+/* This is a comment in CSS */
+
+/* Global styles for the body */
+body {
+  font-family: Arial, sans-serif; /* Sets the default font */
+  margin: 0; /* Removes default margin */
+  padding: 20px; /* Adds padding around the content */
+  background-color: #f4f4f4; /* Sets a light gray background color */
+  color: #333; /* Sets a dark gray text color */
+}
+
+/* Styles for headings */
+h1 {
+  color: #0056b3; /* Sets a blue color for H1 headings */
+  text-align: center; /* Centers the text */
+  margin-bottom: 25px; /* Adds space below the heading */
+}
+
+h2 {
+  color: #007bff; /* Sets a slightly lighter blue for H2 headings */
+  border-bottom: 1px solid #ccc; /* Adds a bottom border */
+  padding-bottom: 10px; /* Adds padding below the text and above the border */
+}
+
+/* Styles for paragraphs */
+p {
+  line-height: 1.6; /* Increases line spacing for readability */
+  margin-bottom: 15px; /* Adds space below paragraphs */
+}
+
+/* Styles for a specific class */
+.container {
+  max-width: 960px; /* Limits the maximum width of the container */
+  margin: 0 auto; /* Centers the container horizontally */
+  background-color: #fff; /* Sets a white background for the container */
+  padding: 30px; /* Adds padding inside the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Styles for a specific ID */
+#main-navigation {
+  background-color: #333; /* Dark background for navigation */
+  padding: 10px 0; /* Vertical padding */
+}
+
+#main-navigation ul {
+  list-style: none; /* Removes bullet points from list items */
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#main-navigation li {
+  display: inline-block; /* Displays list items horizontally */
+  margin: 0 15px;
+}
+
+#main-navigation a {
+  color: #fff; /* White text for navigation links */
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold;
+}
+
+#main-navigation a:hover {
+  color: #ffd700; /* Changes link color on hover */
+}
