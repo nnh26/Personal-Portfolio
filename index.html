@@ -2,33 +2,412 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NewDEV</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta name="description" content="NewDEV - My first project using HTML/CSS.">
-  <meta name="keywords" content="HTML, CSS, web development, NewDEV">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nowshin Hoque — software engineer</title>
+  <meta name="description" content="Nowshin Hoque, computer science at NJIT. Software engineering intern building full-stack and AI-powered apps, heading into backend and cloud engineering.">
+  <meta property="og:title" content="Nowshin Hoque — software engineer">
+  <meta property="og:description" content="Projects, experience, and what I'm building next in backend and cloud.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nnh26.github.io/Personal-Portfolio/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // pick the theme before the page paints
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <nav>
-    <div class="logo">NewDEV</div>
-    <div class="nav-items">
-      <a href="index.html">Home</a>
-      <a href="Projects.html">Projects</a>
-      <a href="Contact.html">Contact</a>
-    </div>
-  </nav>
-  <section class="hero">
-    <div class="hero-container">
-      <div class="column-left">
-        <h1>Hello, I am Nowshin Hoque</h1>
-        <p>This is my first project using HTML/CSS.</p>
-        <a href="GetStarted.html"><button>About me</button></a>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <h1 class="name"><span>Nowshin</span> <span>Hoque</span></h1>
+        <p class="role">Software engineer</p>
+        <p class="intro">Computer science at NJIT, graduating December 2026. I build full-stack and AI-powered apps, and I'm heading deeper into backend and cloud.</p>
       </div>
-      <div class="column-right">
-        <img src="./image-1.svg" alt="illustration" class="hero-image">
+
+      <ul class="meta">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Paterson, New Jersey
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <a href="mailto:nnh@njit.edu">nnh@njit.edu</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.3 18.3 4.6 18.3 4.6c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+          <a href="https://github.com/nnh26">github.com/nnh26</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.9c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5H9.5V9h2.9v1.4c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7V19z"/></svg>
+          <a href="https://www.linkedin.com/in/nowshinhoque/">LinkedIn</a>
+        </li>
+      </ul>
+
+      <nav class="side-nav" aria-label="Sections">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#next">Building next</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="side-foot">
+        <a class="btn" href="Resume.html">Resume</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span>Dark mode</span>
+        </button>
       </div>
-    </div>
-  </section>
+    </aside>
+
+    <main class="main" id="main">
+
+      <section class="section" id="work" aria-labelledby="work-title">
+        <h2 class="section-title" id="work-title">Work</h2>
+        <p class="section-lede">Things I've built, on my own and with teams. Open any card for the details.</p>
+
+        <ul class="cards">
+          <li class="card wide">
+            <div class="card-top">
+              <h3>JobTracker</h3>
+              <span class="when">Mar 2026 – now</span>
+            </div>
+            <p class="kind">Job search tracker and resume analyzer</p>
+            <p class="summary">Track every application from saved to offer, then upload a resume to get a match score, missing skills, and interview prep for each role.</p>
+            <details>
+              <summary>What I built</summary>
+              <ul>
+                <li>A full-stack app with a FastAPI backend and React frontend that automates application tracking.</li>
+                <li>A matching flow on Gemini 3 that scores a resume against each job description.</li>
+                <li>A persistent data layer with SQLAlchemy and Supabase for user data and application records.</li>
+                <li>A responsive Tailwind UI deployed on Vercel, with custom React notifications and a CI/CD pipeline.</li>
+              </ul>
+            </details>
+            <div class="card-foot">
+              <ul class="stack" aria-label="Built with">
+                <li>React</li><li>FastAPI</li><li>Gemini 3</li><li>Supabase</li><li>SQLAlchemy</li><li>Tailwind</li><li>Vercel</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://nowshin-jobtracker.vercel.app/">Live app</a></li>
+                <li><a href="https://github.com/nnh26/JobTracker">Code</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="card wide">
+            <div class="card-top">
+              <h3>Docs</h3>
+              <span class="when">2026</span>
+            </div>
+            <p class="kind">Collaborative document editor</p>
+            <p class="summary">A document editor with rich-text formatting, autosave, file import, and owner-controlled sharing, built and deployed in a four-hour timebox. I'm now growing it into a production-grade backend.</p>
+            <details>
+              <summary>What I built</summary>
+              <ul>
+                <li>Put every access decision behind one permission rule (owner, or has a share) and covered it with Vitest unit tests. Each document route returns 404 or 403 before touching data.</li>
+                <li>Kept the database secret key on the server inside Next.js API routes, with row-level security enabled so the public key can't read any table.</li>
+                <li>Validated every route (empty titles, bad file types, files over 1 MB, sharing with yourself) and wrote an architecture note on what I prioritized and cut.</li>
+              </ul>
+            </details>
+            <details>
+              <summary>What's next</summary>
+              <ul>
+                <li>Real sign-in with Supabase Auth, enforced by row-level security policies.</li>
+                <li>View-only sharing, removing access, version history, and export to PDF or Markdown.</li>
+                <li>Redis caching, cursor-based pagination, rate limiting, request IDs, and structured logs.</li>
+                <li>A k6 load test, so I can report requests per second at a measured p95 latency.</li>
+                <li>Docker, GitHub Actions, and a Terraform deploy to AWS.</li>
+                <li>A job queue for exports and email, with retries and a dead-letter queue.</li>
+              </ul>
+            </details>
+            <div class="card-foot">
+              <ul class="stack" aria-label="Built with">
+                <li>Next.js</li><li>TypeScript</li><li>Supabase Postgres</li><li>Tiptap</li><li>Vitest</li><li>Vercel</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://docs-app-bice.vercel.app/">Live app</a></li>
+                <li><a href="https://github.com/nnh26/docs-app">Code</a></li>
+                <li><a href="https://youtu.be/sY-B86tOdkM">Video</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="card">
+            <div class="card-top">
+              <h3>MedTracker</h3>
+              <span class="when">Jan 2026 – now</span>
+            </div>
+            <p class="kind">Android medication tracker, CS388 group project</p>
+            <p class="summary">Log medications and symptoms, see adherence at a glance, and get warned about interactions between active prescriptions.</p>
+            <details>
+              <summary>What I built</summary>
+              <ul>
+                <li>Wireframes and UI layouts for every screen, setting the navigation flow before development.</li>
+                <li>XML layouts with bottom tab navigation across Home, My Meds, Health Log, and Settings.</li>
+                <li>Research into RxNorm, RxCUI, and Gemini APIs for drug-to-drug interaction detection.</li>
+                <li>A real-time adherence dashboard and symptom journal.</li>
+              </ul>
+            </details>
+            <div class="card-foot">
+              <ul class="stack" aria-label="Built with">
+                <li>Kotlin</li><li>Android Studio</li><li>Jetpack Compose</li><li>RxNorm</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://github.com/LindsayBurke-NJIT/CS388_GroupProject">Code</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="card">
+            <div class="card-top">
+              <h3>DiscoMatch</h3>
+              <span class="when">Sep 2024</span>
+            </div>
+            <p class="kind">Hackathon teammate matching</p>
+            <p class="award">Third place, GirlHacks 2024</p>
+            <p class="summary">Swipe through hacker profiles to find a team, with Gemini matching people on skills and interests.</p>
+            <details>
+              <summary>What I built</summary>
+              <ul>
+                <li>A matchmaking algorithm on Gemini that pairs users by skills and interests.</li>
+                <li>A dynamic Next.js and Tailwind interface.</li>
+                <li>Secure sign-in with Auth0, and MongoDB storage for profiles and team data.</li>
+              </ul>
+            </details>
+            <div class="card-foot">
+              <ul class="stack" aria-label="Built with">
+                <li>Next.js</li><li>Flask</li><li>MongoDB</li><li>Auth0</li><li>Gemini</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://github.com/nnh26/discomatch">Code</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="card">
+            <div class="card-top">
+              <h3>Applicant tracking system</h3>
+              <span class="when">Spring 2026</span>
+            </div>
+            <p class="kind">CS490 capstone, six-person agile team</p>
+            <p class="summary">A full-stack job search platform with profiles, versioned documents, and applications, built in sprints with code review and 450+ backend tests in CI.</p>
+            <details>
+              <summary>What I built</summary>
+              <ul>
+                <li>Updated the GitHub Actions pipeline and built filtering and sorting for the document library.</li>
+                <li>Required authentication on protected endpoints and updated the test suite to match.</li>
+                <li>Fixed a route collision that broke document deletion and a database connection-pool exhaustion bug, and added request logging.</li>
+                <li>Shipped job editing, rename and delete flows for documents, and a performance and accessibility pass on sign-in.</li>
+              </ul>
+            </details>
+            <div class="card-foot">
+              <ul class="stack" aria-label="Built with">
+                <li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>React</li><li>JWT auth</li><li>pytest</li><li>GitHub Actions</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://github.com/IbrahHaroon/CS490StackedProject">Code</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-top">
+              <h3>Where Power Lived, People Wander</h3>
+              <span class="when">Summer 2026</span>
+            </div>
+            <p class="kind">Photo story website, photojournalism at Hanyang University in Seoul</p>
+            <p class="summary">I photographed and interviewed visitors at Gyeongbokgung Palace from Korea, Taiwan, the US, and Australia, all in hanbok, each drawn to the same 600-year-old place for different reasons.</p>
+            <details>
+              <summary>About this project</summary>
+              <ul>
+                <li>Made during a summer study abroad at Hanyang University, alongside a CS course.</li>
+                <li>A semester of walking Seoul with a camera, learning to tell a story in a medium outside engineering: slowing down, asking questions, and listening.</li>
+              </ul>
+            </details>
+            <div class="card-foot">
+              <ul class="stack" aria-label="Skills">
+                <li>Photography</li><li>Interviewing</li><li>Visual storytelling</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://frozenbeauty02.wixsite.com/seoul-layered">View site</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="minor">
+          <li>
+            <h3>Beach Pollution Solution</h3>
+            <p>An educational Unity game about beach cleanup, built in C# with a two-person team I led. 2022.</p>
+          </li>
+          <li>
+            <h3>Calculator</h3>
+            <p>Plain JavaScript, with decimals, chained operations, and keyboard input.</p>
+            <a href="Calculator.html">Try it</a>
+          </li>
+          <li>
+            <h3>This site</h3>
+            <p>My first HTML and CSS project, rebuilt from scratch in 2026. No framework.</p>
+            <a href="https://github.com/nnh26/Personal-Portfolio">Code</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <h2 class="section-title" id="experience-title">Experience</h2>
+        <p class="section-lede">Most recent first.</p>
+        <ol class="jobs">
+          <li class="job">
+            <time>Oct 2025 – Apr 2026</time>
+            <div>
+              <h3>Software Engineering Intern <span>Rekogni AI, remote</span></h3>
+              <ul>
+                <li>Built features across the stack for AI-powered applications and internal tools.</li>
+                <li>Implemented agentic workflows that automate and optimize user interactions.</li>
+                <li>Integrated AI models and APIs into production software.</li>
+                <li>Worked with cross-functional teams using Linear, GitHub, and Microsoft 365.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <time>Spring 2026</time>
+            <div>
+              <h3>Full-stack engineer <span>CS490 capstone, NJIT</span></h3>
+              <p>Six-person agile team building an applicant tracking system with FastAPI, PostgreSQL, and React.</p>
+            </div>
+          </li>
+          <li class="job">
+            <time>Aug 2025 – Feb 2026</time>
+            <div>
+              <h3>Administrative Assistant <span>Invision Optics</span></h3>
+              <ul>
+                <li>Managed patient and business data in My Vision Express, keeping it accurate.</li>
+                <li>Digitized and indexed physical records, and standardized digital and physical folder structures so staff could find information faster.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <time>Dec 2022 – Oct 2025</time>
+            <div>
+              <h3>Sales Associate <span>Tilly's, Wayne NJ</span></h3>
+              <p>Checkout, customer service, and inventory in a fast-paced store.</p>
+            </div>
+          </li>
+          <li class="job">
+            <time>Jun 2021 – Jun 2022</time>
+            <div>
+              <h3>Sales Associate <span>Kohl's, Woodland Park NJ</span></h3>
+              <p>Payments, customer complaints, and keeping customers coming back.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" id="next" aria-labelledby="next-title">
+        <h2 class="section-title" id="next-title">Building next</h2>
+        <p class="section-lede">I want to work on backend systems, not just websites. Here's my plan, in order: grow my Docs app into a full story about performance, database depth, shipping to the cloud, and messaging.</p>
+
+        <ol class="roadmap">
+          <li class="step">
+            <div class="step-head"><h3>Make Docs production-grade</h3><span class="status now">Next up</span></div>
+            <p>Start with real sign-in and row-level security policies. Then add Redis caching, cursor-based pagination, rate limiting, request IDs, and structured logs, and load test it with k6.</p>
+            <p class="goal">Goal: a real number to report, requests per second at a measured p95 latency.</p>
+          </li>
+          <li class="step">
+            <div class="step-head"><h3>Postgres deep-dive</h3><span class="status">Planned</span></div>
+            <p>Seed a million rows, find a slow query with EXPLAIN ANALYZE, add the right index, and publish the before and after. Add PgBouncer for connection pooling.</p>
+            <p class="goal">Goal: a write-up with query plans and timings.</p>
+          </li>
+          <li class="step">
+            <div class="step-head"><h3>Ship it like a company would</h3><span class="status">Planned</span></div>
+            <p>Docker Compose for local development, GitHub Actions running tests on every push, Terraform to deploy on AWS, and dashboards with OpenTelemetry.</p>
+            <p class="goal">Goal: infrastructure as code anyone can read, and a deploy that runs without me.</p>
+          </li>
+          <li class="step">
+            <div class="step-head"><h3>Add a message queue</h3><span class="status">Planned</span></div>
+            <p>Move slow work like PDF export and email off the request path: a worker on a queue with retries and backoff, idempotency keys, and a dead-letter queue. Then publish document events through Redis Streams or Kafka, using the outbox pattern so no event is lost.</p>
+            <p class="goal">Goal: requests stay fast while jobs run in the background, and a failed job never runs twice or disappears.</p>
+          </li>
+        </ol>
+
+        <div class="later">
+          <div>
+            <h3>After that</h3>
+            <ul>
+              <li><strong>Auth service:</strong> refresh tokens, OAuth, role-based access, OWASP tests.</li>
+              <li><strong>A Go service:</strong> rewrite one piece and benchmark it against the original.</li>
+              <li><strong>RAG:</strong> question answering over documents, with embeddings in Postgres.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Learning now</h3>
+            <p>AWS first, then GCP. Docker, Kubernetes, Terraform, and CI/CD pipelines.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <h2 class="section-title" id="about-title">About</h2>
+        <p class="section-lede">Education, skills, and the groups I'm part of.</p>
+        <div class="about-grid">
+          <div>
+            <h3>Education</h3>
+            <ul class="edu">
+              <li><strong>New Jersey Institute of Technology</strong><span>B.S. Computer Science, expected December 2026</span></li>
+              <li><strong>Hanyang University, Seoul</strong><span>Study abroad, summer 2026</span></li>
+            </ul>
+
+            <h3 style="margin-top: 2rem">Honors</h3>
+            <ul class="plain">
+              <li>GirlHacks 2024, third place</li>
+              <li>Dean's List</li>
+              <li>Avanade Women in STEM Scholarship</li>
+              <li>Educational Opportunity Program Scholar, 2022 cohort</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem">Organizations</h3>
+            <ul class="plain">
+              <li>Association for Computing Machinery</li>
+              <li>Women in Computing Society</li>
+              <li>Robotics Club</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Skills</h3>
+            <dl class="skills">
+              <div><dt>Languages</dt><dd>Python, TypeScript, JavaScript, Kotlin, C++, C#, SQL, HTML, CSS</dd></div>
+              <div><dt>Frameworks</dt><dd>React, Next.js, FastAPI, Flask, Node.js, Tailwind CSS, Unity</dd></div>
+              <div><dt>Data</dt><dd>Supabase, PostgreSQL, MongoDB, MySQL, SQLAlchemy</dd></div>
+              <div><dt>AI</dt><dd>Gemini, agentic workflows, AI API integration, model deployment</dd></div>
+              <div><dt>Tools</dt><dd>Git, GitHub Actions, Docker (basic), Auth0, Linear, Vercel, VS Code</dd></div>
+              <div><dt>Learning</dt><dd>AWS, Kubernetes, Terraform, GCP</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <footer class="contact" id="contact">
+        <h2>Get in touch</h2>
+        <a class="contact-email" href="mailto:nnh@njit.edu">nnh@njit.edu</a>
+        <ul class="contact-links">
+          <li><a href="https://github.com/nnh26">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/nowshinhoque/">LinkedIn</a></li>
+          <li><a href="Resume.html">Resume</a></li>
+        </ul>
+        <p class="footnote">Built with HTML, CSS, and a little JavaScript.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="assets/site.js"></script>
 </body>
 </html>
