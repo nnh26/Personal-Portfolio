@@ -1,109 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style4.css">
-    <title>Calculator</title>
-
-   
-    
-      
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator — Nowshin Hoque</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    body { min-height: 100vh; display: flex; flex-direction: column; background: var(--side); color: var(--side-ink); }
+    .top { padding: 1.25rem var(--gutter); }
+    .top a { font-weight: 600; text-decoration: none; }
+    .top a:hover { color: inherit; text-decoration: underline; }
+    .calc-page { flex: 1; display: grid; place-items: center; padding: 1rem var(--gutter) 4rem; }
+    .calc-page p { margin: 1rem 0 0; text-align: center; color: var(--side-muted); font-size: var(--step--1); }
+    :root[data-theme="dark"] .calc { background: #12201a; }
+  </style>
 </head>
 <body>
-    
-    
-   
-
-    <div class="wrapper"> 
-        <section class = "screen" >
-            0
-    </section>
-        <section class="calc-buttons">
-            <div class="calc-button-row"> 
-                    <button class="calc-button double">
-                        C
-                    </button>
-                    <button class="calc-button">
-                        &larr;
-                    </button>
-                    <button class="calc-button">
-                        &divide;
-                    </button>
-                </div>
-            <div class="calc-button-row">
-
-                    <button class="calc-button">
-                        7
-                    </button>
-                    <button class="calc-button">
-                        8
-                    </button>
-                    <button class="calc-button">
-                        9
-                    </button>
-                    <button class="calc-button">
-                        &times;
-                    </button>
-
-            </div>
-                <div class="calc-button-row">
-                    <button class="calc-button">
-                        4
-                    </button>
-                    <button class="calc-button">
-                        5
-                    </button>
-                    <button class="calc-button">
-                        6
-                    </button>
-                    <button class="calc-button">
-                        &minus;
-                    </button>
-
-                </div>
-                <div class="calc-button-row">
-                    <button class="calc-button">
-                        1
-                    </button>
-                    <button class="calc-button">
-                        2
-                    </button>
-                    <button class="calc-button">
-                        3
-                    </button>
-                    <button class="calc-button">
-                        &plus;
-                    </button>
-                </div>
-                <div class="calc-button-row">
-                    <button class="calc-button triple">
-                        0
-                    </button>
-                    <button class="calc-button triple">
-                        &equals;
-                    </button>
-                </div>
-            </div>
-        </section>
-    </div>
-
+  <div class="top"><a href="index.html#work">Back to Nowshin's work</a></div>
+  <main class="calc-page">
     <div>
-        <nav>
-            
-            <div class="nav-items">
-              <a href="Projects.html">Projects</a>
-            </div>
-          </nav>
+      <div class="calc" data-calc data-calc-global aria-label="Calculator">
+        <div class="calc-screen" aria-live="polite">
+          <div class="calc-pending"></div>
+          <div class="calc-value">0</div>
+        </div>
+        <div class="calc-keys">
+          <button type="button" class="fn" data-key="clear">C</button>
+          <button type="button" class="fn" data-key="sign" aria-label="Change sign">±</button>
+          <button type="button" class="fn" data-key="back" aria-label="Backspace">⌫</button>
+          <button type="button" class="op" data-key="/" aria-label="Divide">÷</button>
+          <button type="button" data-key="7">7</button>
+          <button type="button" data-key="8">8</button>
+          <button type="button" data-key="9">9</button>
+          <button type="button" class="op" data-key="*" aria-label="Multiply">×</button>
+          <button type="button" data-key="4">4</button>
+          <button type="button" data-key="5">5</button>
+          <button type="button" data-key="6">6</button>
+          <button type="button" class="op" data-key="-" aria-label="Subtract">−</button>
+          <button type="button" data-key="1">1</button>
+          <button type="button" data-key="2">2</button>
+          <button type="button" data-key="3">3</button>
+          <button type="button" class="op" data-key="+" aria-label="Add">+</button>
+          <button type="button" class="wide" data-key="0">0</button>
+          <button type="button" data-key="." aria-label="Decimal point">.</button>
+          <button type="button" class="op" data-key="=" aria-label="Equals">=</button>
+        </div>
+      </div>
+      <p>You can type too: Enter for equals, Esc to clear.</p>
     </div>
-
-
-    
-    <script src="script.js"></script>
+  </main>
+  <script src="assets/calc.js"></script>
 </body>
-
-
 </html>

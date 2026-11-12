@@ -1,150 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Nowshin Hoque</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #F7F7F7  ;
-            margin: 0;
-            padding: 20px;
-            text-align: center; 
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #F7F7F7  ;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: left; 
-        }
-        h1, h2 {
-            color: #000;
-            margin-bottom: 10px;
-            text-align: center; 
-        }
-        h1 {
-            font-size: 2.5rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
-        }
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .contact-info a {
-            color: #000;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .list-item {
-            margin-bottom: 10px;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Nowshin Hoque</title>
+  <meta name="description" content="Resume of Nowshin Hoque: computer science at NJIT, software engineering intern at Rekogni AI.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .bar { background: var(--side); color: var(--side-ink); }
+    .bar-inner {
+      max-width: 56rem; margin: 0 auto; padding: 0.75rem var(--gutter);
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .back { font-weight: 600; text-decoration: none; }
+    .back:hover { color: inherit; text-decoration: underline; }
+    .bar .btn { background: var(--side-ink); border-color: var(--side-ink); color: var(--side); }
+    .bar .btn:hover { background: transparent; color: var(--side-ink); }
+    .bar-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .bar .ghost { background: transparent; color: var(--side-ink); }
+    .bar .ghost:hover { background: var(--side-ink); color: var(--side); }
+
+    .resume { max-width: 56rem; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3.5rem) var(--gutter) 4rem; }
+    .resume header { padding-bottom: 1.1rem; border-bottom: 2px solid var(--line-strong); }
+    .resume h1 {
+      margin: 0;
+      font-size: clamp(2.75rem, 1.5rem + 5vw, 4.5rem);
+      line-height: 0.95; font-weight: 800; letter-spacing: -0.02em;
+      font-variation-settings: "opsz" 96, "wdth" 75;
+    }
+    .contact-line { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0.9rem 0 0; padding: 0; list-style: none; }
+    .resume section { padding-top: 1.6rem; }
+    .resume h2 { margin: 0 0 0.7rem; font-size: var(--step-1); font-weight: 700; color: var(--accent); }
+    .entry + .entry { margin-top: 1.1rem; }
+    .entry-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1rem; align-items: baseline; }
+    .entry h3 { margin: 0; font-size: var(--step-0); font-weight: 700; }
+    .entry h3 span { font-weight: 400; color: var(--muted); }
+    .entry time { color: var(--muted); font-size: var(--step--1); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .entry .sub { margin: 0.1rem 0 0; color: var(--muted); }
+    .entry ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+    .entry li { margin-bottom: 0.25rem; }
+    .entry li::marker { color: var(--accent); }
+    .rskills { margin: 0; display: grid; gap: 0.4rem; }
+    .rskills div { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1rem; }
+    .rskills dt { font-weight: 700; }
+    .rskills dd { margin: 0; }
+    .resume .plain li { margin-bottom: 0.25rem; }
+    @media (max-width: 560px) { .rskills div { grid-template-columns: 1fr; gap: 0; } }
+
+    @media print {
+      @page { margin: 0.45in 0.5in; }
+      :root, :root[data-theme="dark"] {
+        --bg: #fff; --ink: #1c3a2b; --muted: #56695e; --accent: #4f7d64; --line-strong: #1c3a2b;
+      }
+      html { font-size: 9.2pt; }
+      body { line-height: 1.38; }
+      .bar, .skip { display: none; }
+      .resume { padding: 0; max-width: none; }
+      .resume h1 { font-size: 26pt; }
+      .resume header { padding-bottom: 0.6rem; }
+      .resume section { padding-top: 0.8rem; }
+      .resume h2 { margin-bottom: 0.4rem; }
+      .entry + .entry { margin-top: 0.6rem; }
+      .entry { break-inside: avoid; }
+      a { text-decoration: none; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Nowshin Hoque</h1>
-            <div class="contact-info">
-                <p>
-                    <strong>Phone:</strong> 862-378-7855 <br>
-                    <strong>Email:</strong> <a href="mailto:nnh@njit.edu">nnh@njit.edu</a> <br>
-                    <strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/nowshinhoque">linkedin.com/in/nowshin</a> <br>
-                    <strong>GitHub:</strong> <a href="https://github.com/nnh26">github.com/nowshin</a>
-                </p>
-            </div>
-        </header>
-        
-        <section class="section">
-            <h2>Education</h2>
-            <p><strong>New Jersey Institute of Technology</strong>, Newark, NJ</p>
-            <p>Bachelor of Science in Computer Science, September 2022 - Present</p>
-            <p>Expected Graduation Date: May 2026</p>
-        </section>
-
-        <section class="section">
-            <h2>Related Coursework</h2>
-            <ul class="list">
-                <li class="list-item"><strong>Roadmap To Computing:</strong> Python</li>
-                <li class="list-item"><strong>Intro To Computer Science I:</strong> Java</li>
-                <li class="list-item"><strong>Intro To Computer Science II:</strong> Data Structures and Algorithms, Java</li>
-                <li class="list-item"><strong>Programming Language Concepts:</strong> C++</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Technical Skills</h2>
-            <ul class="list">
-                <li class="list-item"><strong>Languages:</strong> Java, Python, HTML, CSS</li>
-                <li class="list-item"><strong>Developer Tools:</strong> VS Code, Visual Studio, IntelliJ, Version Control (Git)</li>
-                <li class="list-item"><strong>Computer:</strong> Microsoft Office Word, Excel, PowerPoint, Outlook</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Experience</h2>
-            <h3>Tilly's INC, Wayne, NJ</h3>
-            <p>Sales Associate, December 2022 -- Present</p>
-            <ul class="list">
-                <li class="list-item">Provide exceptional customer service during the checkout process, ensuring a positive shopping experience.</li>
-                <li class="list-item">Collaborate effectively with team members to address customer needs and inquiries promptly.</li>
-                <li class="list-item">Maintain accurate and organized inventory, optimizing product availability for customers.</li>
-                <li class="list-item">Actively listen to customer needs and concerns to provide tailored solutions and ensure satisfaction.</li>
-            </ul>
-            
-            <h3>Kohl's, Woodland Park, NJ</h3>
-            <p>Sales Associate, June 2021 -- June 2022</p>
-            <ul class="list">
-                <li class="list-item">Provided high-quality customer service, enhancing the payment processes through effective communication.</li>
-                <li class="list-item">Proficient in addressing customer complaints and resolving issues to enhance customer retention.</li>
-                <li class="list-item">Consistently responded to dynamic customer needs within a fast-paced service environment.</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Projects</h2>
-            <h3>Personal Portfolio Website</h3>
-            <p><em>HTML, CSS</em>, October 2022 -- Present</p>
-            <ul class="list">
-                <li class="list-item">Developed a personal portfolio website to showcase skills, projects, and accomplishments.</li>
-                <li class="list-item">Designed and implemented the website using HTML and CSS to create an interactive and visually appealing user experience.</li>
-                <li class="list-item">Utilized modern web development practices, such as version control (Git) and web hosting (GitHub Pages).</li>
-            </ul>
-            
-            <h3>Beach Pollution Solution</h3>
-            <p><em>C#</em>, May 2022 -- June 2022</p>
-            <ul class="list">
-                <li class="list-item">Developed an educational video game advocating beach pollution awareness and cleanup engagement.</li>
-                <li class="list-item">Proficiently utilized Unity software for scripting, animation, GUI design, and texture mapping.</li>
-                <li class="list-item">Led a cross-functional team of two, including designers and developers, to bring the game concept to life, ensuring all project milestones were met.</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Awards / Honors</h2>
-            <ul class="list">
-                <li class="list-item"><strong>Dean's List</strong></li>
-                <li class="list-item"><strong>Cohort:</strong> Education Opportunity Program Scholar 2022</li>
-                <li class="list-item"><strong>Scholarship:</strong> Avanade Women in STEM - Awarded to women in STEM for academic excellence</li>
-            </ul>
-        </section>
+  <a class="skip" href="#resume">Skip to resume</a>
+  <div class="bar">
+    <div class="bar-inner">
+      <a class="back" href="index.html">Nowshin Hoque</a>
+      <div class="bar-actions">
+        <a class="btn" href="Nowshin-Hoque-Resume.pdf" download>Download PDF</a>
+      </div>
     </div>
+  </div>
+
+  <main class="resume" id="resume">
+    <header>
+      <h1>Nowshin Hoque</h1>
+      <ul class="contact-line">
+        <li><a href="mailto:nnh@njit.edu">nnh@njit.edu</a></li>
+        <li>Paterson, NJ</li>
+        <li><a href="https://github.com/nnh26">github.com/nnh26</a></li>
+        <li><a href="https://www.linkedin.com/in/nowshinhoque/">linkedin.com/in/nowshinhoque</a></li>
+      </ul>
+    </header>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>New Jersey Institute of Technology <span>Newark, NJ</span></h3>
+          <time>Expected Dec 2026</time>
+        </div>
+        <p class="sub">Bachelor of Science in Computer Science</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <dl class="rskills">
+        <div><dt>Languages</dt><dd>Python, C++, C#, JavaScript, TypeScript, HTML, CSS, SQL</dd></div>
+        <div><dt>Frameworks &amp; libraries</dt><dd>Next.js, React, Tailwind CSS, Flask, Node.js, Unity</dd></div>
+        <div><dt>Databases</dt><dd>MongoDB, MySQL</dd></div>
+        <div><dt>AI &amp; tools</dt><dd>Gemini AI, agentic workflows, AI API integration, model deployment</dd></div>
+        <div><dt>Other tools</dt><dd>Git, Auth0, My Vision Express, Docker (basic), VS Code</dd></div>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Rekogni AI <span>Software Engineering Intern</span></h3>
+          <time>Oct 2025 – Apr 2026</time>
+        </div>
+        <ul>
+          <li>Contributed to full-stack development of AI-powered applications and internal tools.</li>
+          <li>Implemented agentic workflows that automate and optimize user interactions.</li>
+          <li>Integrated AI models and APIs into production software to enhance functionality and performance.</li>
+          <li>Collaborated with cross-functional teams using Linear for project management, GitHub for version control, and Microsoft 365 for communication and documentation.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Invision Optics <span>Administrative Assistant</span></h3>
+          <time>Aug 2025 – Feb 2026</time>
+        </div>
+        <ul>
+          <li>Managed and updated patient and business data in My Vision Express, ensuring accuracy and data integrity.</li>
+          <li>Digitized and indexed physical records in My Vision Express, improving accessibility and supporting digital workflows.</li>
+          <li>Standardized digital and physical folder structures, streamlining information retrieval for staff.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>JobTracker <span>React (Vite), FastAPI, Gemini 3, Supabase, Tailwind CSS</span></h3>
+          <time>Mar 2026 – present</time>
+        </div>
+        <ul>
+          <li>Engineered a full-stack job search and resume analyzer using FastAPI and React to automate application tracking.</li>
+          <li>Integrated Gemini 3 AI to build a matching algorithm that analyzes resumes against job descriptions for match scores.</li>
+          <li>Developed a persistent data layer with SQLAlchemy and Supabase for secure user data and application record storage.</li>
+          <li>Deployed a responsive UI on Vercel with Tailwind CSS, featuring custom React notification systems and CI/CD pipelines.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>MedTracker <span>Kotlin, Android Studio, XML/Jetpack Compose</span></h3>
+          <time>Jan 2026 – present</time>
+        </div>
+        <ul>
+          <li>Designed wireframes and UI layouts for all app screens, establishing the visual structure and navigation flow before development.</li>
+          <li>Designed and implemented XML layouts for all app screens, including bottom tab navigation across Home, My Meds, Health Log, and Settings.</li>
+          <li>Researched RxNorm, RxCUI, and Gemini AI APIs for drug-to-drug interaction detection based on active prescriptions.</li>
+          <li>Built an Android app featuring a real-time adherence dashboard and symptom journal.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>DiscoMatch <span>Next.js, Tailwind CSS, Python Flask</span></h3>
+          <time>Sep 2024 – present</time>
+        </div>
+        <ul>
+          <li>Implemented a matchmaking algorithm using Gemini AI to connect users based on skills and interests.</li>
+          <li>Designed a dynamic UI using Next.js and Tailwind CSS to provide an engaging user experience.</li>
+          <li>Integrated secure authentication with Auth0, ensuring safe access to the platform.</li>
+          <li>Used MongoDB to store user profiles and team data, enabling real-time updates and efficient data management.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Awards &amp; honors</h2>
+      <ul class="plain">
+        <li>GirlHacks 2024 Winner, third place</li>
+        <li>Dean's List</li>
+        <li>Educational Opportunity Program Scholar, 2022 cohort</li>
+        <li>Avanade Women in STEM Scholarship, awarded to women in STEM for academic excellence</li>
+        <li>Organizations: Association for Computing Machinery, Women in Computing Society, Robotics Club</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
